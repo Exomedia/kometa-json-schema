@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/Exomedia/kometa-json-schema/refs/heads/main/collections.schema.json"
   "title": "Kometa Collections",
   "type": "object",
   "required": ["collections"],
