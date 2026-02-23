@@ -1,0 +1,78 @@
+{
+  "title": "Kometa Collections",
+  "type": "object",
+  "required": ["collections"],
+  "additionalProperties": false,
+  "properties": {
+    "collections": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/collection"
+      }
+    }
+  },
+  "$defs": {
+    "collection": {
+      "type": "object",
+      "properties": {
+        "tmdb_collection": {
+          "oneOf": [
+            { "type": "integer" },
+            {
+              "type": "array",
+              "items": { "type": "integer" }
+            }
+          ]
+        },
+        "tmdb_movie": {
+          "oneOf": [
+            { "type": "integer" },
+            {
+              "type": "array",
+              "items": { "type": "integer" }
+            }
+          ]
+        },
+        "imdb_list": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "properties": {
+                "list_id": { "type": "string" },
+                "sort_by": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "url_poster": {
+          "type": "string",
+          "format": "uri"
+        },
+        "url_background": {
+          "type": "string",
+          "format": "uri"
+        },
+        "collection_order": {
+          "type": "string",
+          "enum": ["release", "alpha", "custom"]
+        },
+        "sync_mode": {
+          "type": "string",
+          "enum": ["sync", "append"]
+        },
+        "sort_title": {
+          "type": "string"
+        },
+        "filters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
