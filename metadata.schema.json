@@ -1,0 +1,85 @@
+{
+  "$schema": "",
+  "title": "Kometa Metadata",
+  "type": "object",
+  "required": ["metadata"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/show"
+      }
+    }
+  },
+  "$defs": {
+    "url_fields": {
+      "type": "object",
+      "properties": {
+        "url_poster": {
+          "type": "string",
+          "format": "uri"
+        },
+        "url_background": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "episode": {
+      "type": "object",
+      "properties": {
+        "url_poster": {
+          "type": "string",
+          "format": "uri"
+        },
+        "url_background": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "season": {
+      "type": "object",
+      "properties": {
+        "url_poster": {
+          "type": "string",
+          "format": "uri"
+        },
+        "url_background": {
+          "type": "string",
+          "format": "uri"
+        },
+        "episodes": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/episode"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "show": {
+      "type": "object",
+      "properties": {
+        "url_poster": {
+          "type": "string",
+          "format": "uri"
+        },
+        "url_background": {
+          "type": "string",
+          "format": "uri"
+        },
+        "seasons": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/season"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
