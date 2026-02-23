@@ -1,5 +1,5 @@
 {
-  "$schema": "",
+  "$schema": "https://raw.githubusercontent.com/Exomedia/kometa-json-schema/refs/heads/main/metadata.schema.json",
   "title": "Kometa Metadata",
   "type": "object",
   "required": ["metadata"],
