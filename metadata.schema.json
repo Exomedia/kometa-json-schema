@@ -23,6 +23,9 @@
         "url_background": {
           "type": "string",
           "format": "uri"
+        },
+        "blank_edition": {
+          "type": "boolean"
         }
       },
       "additionalProperties": false
